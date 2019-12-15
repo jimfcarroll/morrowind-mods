@@ -27,7 +27,7 @@ local lfs = require("lfs")
 if lfs.attributes("Data Files/MWSE/mods/abot/Smart Map/main.lua") then
 	mwse.log("[UI Expansion] MenuMap: skipping cellChanged event to be managed by abot/Smart Map");
 else
-	event.register("cellChanged", changeCell)
+	-- event.register("cellChanged", changeCell)
 end
 
 local function onKeyInput()
