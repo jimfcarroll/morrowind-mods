@@ -208,8 +208,10 @@ end
 local function extraTooltipEarly(e)
 	-- I believe this is hardcoded in engine, so we'll just do this too.
 	if not e.object.id:find("Gold_") and not e.object.isKey then
-		tryHideID(e.tooltip, "HelpMenu_value")
-		tryHideID(e.tooltip, "HelpMenu_weight")
+        	if not e.object.isSoulGem then
+			tryHideID(e.tooltip, "HelpMenu_value")
+			tryHideID(e.tooltip, "HelpMenu_weight")
+		end
 
 		-- Add padding to the title.
 		e.tooltip:getContentElement().children[1].borderAllSides = 3
